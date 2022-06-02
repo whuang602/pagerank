@@ -83,14 +83,12 @@ def pagerank2(E, return_vector = False, max_iters = 1000, tolerance = 1e-6, m = 
     else:
         return ranking
 
-# %%
 # Test Case 1
 E = np.load("PageRankEG1.npy")
 r, v = pagerank2(E, return_vector = True)
 print("r =", r)
 print("v =", v)
 
-# %%
 # Test Case 2
 E = np.load('PageRankEG3.npy')
 sitename = open('PageRankEG3.nodelabels').read().splitlines()
@@ -100,7 +98,6 @@ print()
 for i in range(10):
     print('rank %d is page %3d: %s' % (i, r[i], sitename[r[i]]))
 
-# %%
 # Test Case 3
 E = scipy.sparse.load_npz('webGoogle.npz')  
 r, v = pagerank2(E, return_vector = True)
@@ -122,4 +119,3 @@ for i in range(-1,-11,-1):
     if (i != -10 ):
         print(', ',end='')
 print(' ]\n')
-# %%
